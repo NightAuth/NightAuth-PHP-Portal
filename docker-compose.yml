@@ -1,0 +1,10 @@
+services:
+  portal-php:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - NIGHTAUTH_API_URL=http://host.docker.internal:13100
+      - PORTAL_ID=demo-app
+      - DEFAULT_LANG=en
+    restart: unless-stopped
